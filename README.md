@@ -1,1 +1,3 @@
-# Esimerkit_ja_muistiinpanot
+# Examples_and_Notes
+
+Lyhyitä esimerkkejä ja kommentoituja koodinpätkiä, sekä muistiinpanoja.
