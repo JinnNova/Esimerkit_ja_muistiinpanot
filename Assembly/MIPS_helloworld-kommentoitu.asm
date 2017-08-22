@@ -1,6 +1,6 @@
 		# MIPS - ohjelma joka printtaa ruudulle "Hei maailma!". Yksityiskohtaisesti kommentoitu.
 		# MIPS ohjelma jaetaan sektioihin. -> Maaritellaan sektiot.
-		# .data sektioon tulee kaikki ohjelman data. Kuten esim. muiden kielien muuttujat/vakiot.
+		# .data sektioon tulee kaikki ohjelman data. Kuten esim. muissa kielissä tulisi muuttujat/vakiot.
 		# data = random access memoryssa
 	.data
 out_string: .asciiz "Hei maailma!\n"
