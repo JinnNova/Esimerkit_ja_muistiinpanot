@@ -13,9 +13,9 @@
     # bne = branch if not equal
     bne $t0, $t1, eriNumerot
 	
-	li $v0, 4
-	la $a0, message3
-	syscall
+    li $v0, 4
+    la $a0, message3
+    syscall
   
     li $v0, 10
     syscall
@@ -31,8 +31,8 @@
 	
   eriNumerot:
     li $v0, 4
-	la $a0, message2
-	syscall
+    la $a0, message2
+    syscall
 	
-	li $v0, 10
-	syscall
+    li $v0, 10
+    syscall
