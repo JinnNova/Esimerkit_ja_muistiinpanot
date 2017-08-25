@@ -18,7 +18,9 @@
     # "slti = set on less than immediate   - jos haluat verrata rekisterissa olevaa arvoa numeroon"
 	
     # "muita: sltiu, sltu (set less than immidiate unsigned, set less than unsigned)"
-    # "slt ottaa kolme argumenttia: 1. rekisteri johon tallennetaan tulos, 2. ensimmainen rekisteri jota verrataan, 3. toinen rekisteri johon verrataan."
+    # "slt ottaa kolme argumenttia: 1. rekisteri johon tallennetaan tulos," 
+    #                              "2. ensimmainen rekisteri jota verrataan,"
+    #                              "3. toinen rekisteri johon verrataan."
     # "$s0 rekisteri = destination, arvo: true = 1 tai false = 0"
 	
     # "slt = onko totta etta t0 < t1 ?"
@@ -30,15 +32,17 @@
     bne $s0, $zero, pienempiKuin
 	
     # "jos yllaoleva ei branchannut, jatketaan tarkistamista."
-    # "kun $s0 on true(1), tiedetaan etta luku1 on pienempi kuin luku2. mutta ei tiedeta onko luku1 suurempi vai yhtasuuri kuin luku2. siksi tarkistetaan:"
+    # "kun $s0 on true(1), tiedetaan etta luku1 on pienempi kuin luku2..." 
+    # "Mutta! kun s0 = 0 eli false, ei tiedeta onko luku1 suurempi vai yhtasuuri kuin luku2. siksi tarkistetaan:"
     # "onko t1 pienempi kuin t0? onko totta etta t1 < t0 ?"
     slt $s0, $t1, $t0
 	
     # "jos on totta, eli s0 != 0, niin tiedetaan etta t1 < t0 eli t0 on suurempi kuin t1"
     bne $s0, $zero, suurempiKuin
 	
-    # "jos kumpikaan yllaolevista ei branchaa, viimeinen vaihtoehto on etta luvut ovat yhtasuuret"
-    # "jos t0 ja t1 ovat yhta suuret"
+    # "jos kumpikaan yllaolevista ei branchaa, eli kumpikaan luku ei ollut pienempi kuin toinen..."
+    # "viimeinen vaihtoehto on, etta luvut ovat silloin yhtasuuret"
+    # "jos t0 ja t1 ovat yhta suuret, branchaa"
     beq $t0, $t1, yhtaSuuret
 	
 	
