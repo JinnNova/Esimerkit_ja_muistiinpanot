@@ -9,8 +9,7 @@
     addi $t1, $zero, 20
 	
     beq $t0, $t1, samatNumerot
-	
-    # bne = branch if not equal
+
     bne $t0, $t1, eriNumerot
 	
     li $v0, 4
